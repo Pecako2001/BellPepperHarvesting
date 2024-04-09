@@ -29,7 +29,7 @@ def process_frame(frame: np.ndarray, _) -> np.ndarray:
         scene=frame, detections=detections)
     annotated_image = label_annotator.annotate(
         scene=annotated_image, detections=detections, labels=labels)
-
+    
     return annotated_image
 
 sv.process_video(source_path=VIDEO_PATH, target_path=f"result_2.mp4", callback=process_frame)

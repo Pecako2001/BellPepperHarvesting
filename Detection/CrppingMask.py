@@ -30,7 +30,7 @@ while cap.isOpened():
         # iterate each object contour 
         for ci,c in enumerate(r):
             label = c.names[c.boxes.cls.tolist().pop()]
-
+            
             b_mask = np.zeros(img.shape[:2], np.uint8)
 
             # Create contour mask 

@@ -3,9 +3,14 @@ Classify/delete
 Classify/ripe
 Classify/unripe
 ultralytics_crop
+Classify/dataset
+Testimages/
+*.MOV
+*/runs
 *.avi
 *.mp4
 *.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
