@@ -4,12 +4,20 @@ Classify/ripe
 Classify/unripe
 ultralytics_crop
 Classify/dataset
-Testimages/
+TestImages
 *.MOV
 */runs
 *.avi
 *.mp4
 *.pt
+runs/
+Classify/NN_Classify_Dataset
+Classify/RGB_Classify_Dataset1
+Classify/RGB_Classify_Dataset2
+Classify/RGB_Classify_Dataset3
+Classify/RGB_Classify_Dataset4
+Classify/RGB_Classify_Full
+*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

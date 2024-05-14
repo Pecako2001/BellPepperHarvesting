@@ -1,6 +1,12 @@
 import cv2
 import numpy as np
 
+"""
+Tool to create a side-by-side image comparison with text overlaid on each image.
+This script loads two images, resizes them to the same height, and stacks them horizontally.
+It then overlays text on each image to label them and saves the final image.
+"""
+
 # Read two images
 image1 = cv2.imread('00de04a9913eaa3cdf03210f215bbb1a.png')
 image2 = cv2.imread('frame1450output.jpg')

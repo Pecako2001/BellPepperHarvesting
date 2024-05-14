@@ -1,6 +1,12 @@
 import cv2
 import numpy as np
 
+"""
+Tool to resize a video while maintaining the aspect ratio.
+This script reads a video file, resizes each frame to the specified dimensions while maintaining the aspect ratio,
+and writes the resized video to a new file.
+"""
+
 def resize_video_with_aspect_ratio(input_video_path, output_video_path, width=1920, height=1080):
     # Open the input video
     cap = cv2.VideoCapture(input_video_path)
