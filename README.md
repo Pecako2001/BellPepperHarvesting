@@ -15,8 +15,8 @@
   <a href="https://github.com/Pecako2001/BellPepperHarvesting/network/members">
     <img src="https://img.shields.io/github/forks/Pecako2001/BellPepperHarvesting.svg?label=Forks&style=flat-square" alt="Forks">
   </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License">
+  <a href="https://www.gnu.org/licenses/gpl-3.0">
+    <img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=flat-square" alt="License">
   </a>
 </div>
 <br><br>
