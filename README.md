@@ -74,12 +74,12 @@ For the detections of the bell peppers I have tested multiple neural network fra
 
 For more information on the detections of bell peppers view: [Classification](./Detectons/Readme.md)
 
-## Ripeness Determination
+## Ripeness
 
 ### Ripeness Classification
 To determine the ripeness of the fruit, we use YOLOv8 models. The models are trained on a dataset split into ripe and unripe categories.
 
-![Classification Model Accuracy](./images/Class_Model_Acc.png)
+![Classification Model Accuracy](./images/NN_results.png)
 
 ### Ripeness RGB
 An alternative method based on the color analysis of bell peppers. This algorithm takes an image as an input based on the detections of the neural network and then looks at the pixels inside the detections to classify them as ripe or unripe.
@@ -88,11 +88,8 @@ An alternative method based on the color analysis of bell peppers. This algorith
 
 For more information on the determination of the ripeness of the bellpepper view: [Classification](./Classify/Readme.md)
 
-## 3D Estimation
+## 3D Pose Estimation
 Placeholder for 3D estimation details and images.
-
-## Pose Estimation
-Placeholder for pose estimation details and images.
 
 ## Conclusion
 Summary of findings and potential impacts on automated bell pepper harvesting.
