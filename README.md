@@ -65,24 +65,12 @@ Next, we will examine the system design proposal. After addressing all the resea
 ### Ripeness Classification
 To determine the ripeness of the fruit, we use YOLOv8 models. The models are trained on a dataset split into ripe and unripe categories.
 
-| Model       | Accuracy Top-1 | Accuracy Ripe | Accuracy Unripe |
-|-------------|----------------|---------------|-----------------|
-| YOLOv8n-cls | 97.9%          | 97%           | 98%             |
-| YOLOv8s-cls | 97.6%          | 97%           | 98%             |
-| YOLOv8m-cls | 97.5%          | 96%           | 98%             |
-| YOLOv8l-cls | 97.7%          | 97%           | 98%             |
-| YOLOv8x-cls | 97.6%          | 96%           | 98%             |
+![Classification Model Accuracy](./images/Class_Model_Acc.png)
 
 ### Ripeness RGB
-An alternative method based on the color analysis of bell peppers.
+An alternative method based on the color analysis of bell peppers. This algorithm takes an image as an input based on the detections of the neural network and then looks at the pixels inside the detections to classify them as ripe or unripe.
 
-| Model   | Ripe Classification | Unripe Classification |
-|---------|---------------------|-----------------------|
-| Set 1   | 97.16%              | 98.27%                |
-| Set 2   | 99.39%              | 97.11%                |
-| Set 3   | 95.96%              | 68.20%                |
-| Set 4   | 100.00%             | 91.75%                |
-| All Sets| 98.35%              | 85.39%                |
+![RGB Model Performance](./images/Classify_Results.png)
 
 For more information on the determination of the ripeness of the bellpepper view: [Classification](./Classify/Readme.md)
 
