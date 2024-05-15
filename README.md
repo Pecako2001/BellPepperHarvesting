@@ -7,25 +7,24 @@
 
 <div align="center">
   <a href="https://github.com/Pecako2001/BellPepperHarvesting/stargazers">
-    <img src="https://img.shields.io/github/stars/your-username/your-repository.svg?style=for-the-badge" alt="Stargazers">
+    <img src="https://img.shields.io/github/stars/Pecako2001/BellPepperHarvesting.svg?label=Stars&style=flat-square" alt="Stargazers">
   </a>
   <a href="https://github.com/Pecako2001/BellPepperHarvesting/issues">
-    <img src="https://img.shields.io/github/issues/your-username/your-repository.svg?style=for-the-badge" alt="Issues">
+    <img src="https://img.shields.io/github/issues/Pecako2001/BellPepperHarvesting.svg?label=Issues&style=flat-square" alt="Issues">
   </a>
   <a href="https://github.com/Pecako2001/BellPepperHarvesting/network/members">
-    <img src="https://img.shields.io/github/forks/your-username/your-repository.svg?style=for-the-badge" alt="Forks">
+    <img src="https://img.shields.io/github/forks/Pecako2001/BellPepperHarvesting.svg?label=Forks&style=flat-square" alt="Forks">
   </a>
-  <a href="https://github.com/Pecako2001/BellPepperHarvesting/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/your-username/your-repository.svg?style=for-the-badge" alt="License">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License">
   </a>
 </div>
-
+<br><br>
 
 <h1 align="center">Exploring automated bell pepper harvesting</h1>
 <div align="center">
 This research was conducted as part of the A-System minor at Fontys University of Applied Sciences. The project explores advancements in automated bell pepper detection, evaluating existing methods and investigating innovative techniques using AI technologies. The primary focus is on enhancing the precision and efficiency of bell pepper detection in automated harvesting systems.
 </div>
-</br>
 <div align="center">
 
 ## Connect with Me
@@ -66,8 +65,14 @@ All of these questions are answered inside my research report, for more informat
 Next, we will examine the system design proposal. After addressing all the research questions and analyzing their answers, I have determined what I believe to be the optimal and most viable solution for future automated bell pepper harvesting. This design considers the conclusions drawn from the research and aims to implement a system that can be realistically developed and deployed.
 
 <div align="center">
-
+<img src="./images/SystemDesign.png">
 </div>
+
+## Detections
+For the detections of the bell peppers I have tested multiple neural network frameworks and version to look at the difference inside there performance. The conclusion was drawn that YOLOv8 is currently the best performing model with the most documentation on how to fine tune this model. 
+
+
+For more information on the detections of bell peppers view: [Classification](./Detectons/Readme.md)
 
 ## Ripeness Determination
 
@@ -83,15 +88,6 @@ An alternative method based on the color analysis of bell peppers. This algorith
 
 For more information on the determination of the ripeness of the bellpepper view: [Classification](./Classify/Readme.md)
 
-## Detections
-| Model       | Box Precision | Accuracy | mAP50 |
-|-------------|---------------|----------|-------|
-| YOLOV5-seg  | 62.8%         | 50.0%    |  -    |
-| YOLOV8-seg  | 63.0%         | 51.5%    |  -    |
-| YOLOV9-seg  | 54.1%         | 53.7%    |  -    |
-| GELAN-seg   | 71.6%         | 53.2%    |  -    |
-
-For more information on the detections of bell peppers view: [Classification](./Detectons/Readme.md)
 ## 3D Estimation
 Placeholder for 3D estimation details and images.
 

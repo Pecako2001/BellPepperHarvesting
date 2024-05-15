@@ -12,7 +12,7 @@ This script demonstrates how to perform object segmentation and classification o
 #### Usage
 
 ```sh
-python video_segmentation_classification.py --video input_video.mp4 --ClassifyModel ClassBest.pt --SegModel SegBest.pt --output output_video.mp4 --show
+python video_segmentation_bell_pepper.py --video input_video.mp4 --ClassifyModel ClassBest.pt --SegModel SegBest.pt --output output_video.mp4 --show
 ```
 
 #### Arguments
@@ -62,7 +62,7 @@ This script demonstrates how to perform object segmentation and classification o
 #### Usage
 
 ```sh
-python video_segmentation_classification_test.py --video input_video.mp4 --ClassifyModel ClassBest.pt --SegModel SegBest.pt --output output_video.mp4 --show
+python video_segmentation_all_classes.py --video input_video.mp4 --ClassifyModel ClassBest.pt --SegModel SegBest.pt --output output_video.mp4 --show
 ```
 
 #### Arguments

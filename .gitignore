@@ -18,6 +18,7 @@ Classify/RGB_Classify_Dataset3
 Classify/RGB_Classify_Dataset4
 Classify/RGB_Classify_Full
 *.pdf
+temp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
