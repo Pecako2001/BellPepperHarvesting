@@ -6,9 +6,18 @@
 <br><br>
 
 <div align="center">
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-<br>
+  <a href="https://github.com/Pecako2001/BellPepperHarvesting/stargazers">
+    <img src="https://img.shields.io/github/stars/your-username/your-repository.svg?style=for-the-badge" alt="Stargazers">
+  </a>
+  <a href="https://github.com/Pecako2001/BellPepperHarvesting/issues">
+    <img src="https://img.shields.io/github/issues/your-username/your-repository.svg?style=for-the-badge" alt="Issues">
+  </a>
+  <a href="https://github.com/Pecako2001/BellPepperHarvesting/network/members">
+    <img src="https://img.shields.io/github/forks/your-username/your-repository.svg?style=for-the-badge" alt="Forks">
+  </a>
+  <a href="https://github.com/Pecako2001/BellPepperHarvesting/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/your-username/your-repository.svg?style=for-the-badge" alt="License">
+  </a>
 </div>
 
 
