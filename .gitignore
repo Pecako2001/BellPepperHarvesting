@@ -1,9 +1,9 @@
 # Project specific
-Classify/delete
-Classify/ripe
-Classify/unripe
+Ripeness/delete
+Ripeness/ripe
+Ripeness/unripe
 ultralytics_crop
-Classify/dataset
+Ripeness/dataset
 TestImages
 *.MOV
 */runs
@@ -11,12 +11,12 @@ TestImages
 *.mp4
 *.pt
 runs/
-Classify/NN_Classify_Dataset
-Classify/RGB_Classify_Dataset1
-Classify/RGB_Classify_Dataset2
-Classify/RGB_Classify_Dataset3
-Classify/RGB_Classify_Dataset4
-Classify/RGB_Classify_Full
+Ripeness/NN_Classify_Dataset
+Ripeness/RGB_Classify_Dataset1
+Ripeness/RGB_Classify_Dataset2
+Ripeness/RGB_Classify_Dataset3
+Ripeness/RGB_Classify_Dataset4
+Ripeness/RGB_Classify_Full
 *.pdf
 temp
 
