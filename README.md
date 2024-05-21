@@ -71,8 +71,11 @@ Next, we will examine the system design proposal. After addressing all the resea
 ## Detections
 For the detections of the bell peppers I have tested multiple neural network frameworks and version to look at the difference inside there performance. The conclusion was drawn that YOLOv8 is currently the best performing model with the most documentation on how to fine tune this model. 
 
+<div align="center">
+  <img src="./images/Detections.png" width="50%">
+</div>
 
-For more information on the detections of bell peppers view: [Classification](./Detectons/Readme.md)
+For more information on the detections of bell peppers view: [Detection](./Detection/Readme.md)
 
 ## Ripeness
 
@@ -89,7 +92,16 @@ An alternative method based on the color analysis of bell peppers. This algorith
 For more information on the determination of the ripeness of the bellpepper view: [Classification](./Classify/Readme.md)
 
 ## 3D Pose Estimation
-Placeholder for 3D estimation details and images.
+This approach uses a pre-trained YOLOv8 segmentation model to determine the pose of bell peppers accurately, leveraging computer vision techniques. The YOLOv8 model detects and segments objects within an image, identifying bell peppers and generating segmentation masks to outline their contours.
+
+For each detected object, the contour is extracted and a binary mask is created for further processing. Among the detected objects, the largest contour, assumed to be the bell pepper, is identified. An ellipse is fitted to approximate its shape, and the minimum enclosing rotated rectangle (bounding box) is calculated to provide the center, size, and angle of the bell pepper. Additionally, the peduncle (stem) is marked to visualize the orientation.
+
+This method combines object detection with contour analysis to accurately estimate the pose of bell peppers.
+<div align="center">
+<img src="./images/PoseEstimation.png" width="50%">
+</div>
+
+For more information on the determination of the pose of the bell pepper view: [Pose estimation](./3DPoseEstimation/Readme.md)
 
 ## Conclusion
 Summary of findings and potential impacts on automated bell pepper harvesting.
@@ -109,7 +121,7 @@ Contributions are welcome! Please open an issue or submit a pull request for any
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the AGPL License.
 
 # References
 - Agrist. (2024, March). Agrist. Retrieved from https://agrist.com/.

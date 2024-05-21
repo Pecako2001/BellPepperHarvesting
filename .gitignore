@@ -19,6 +19,7 @@ Ripeness/RGB_Classify_Dataset4
 Ripeness/RGB_Classify_Full
 *.pdf
 temp
+output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

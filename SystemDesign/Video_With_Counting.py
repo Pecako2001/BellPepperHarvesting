@@ -26,8 +26,8 @@ assert cap.isOpened(), "Error reading video file"
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
-# Line points around 5% from the right side and from top to bottom
-line_x = int(w * 0.95)
+# Line points around 10% from the right side and from top to bottom
+line_x = int(w * 0.90)
 line_points = [(line_x, 0), (line_x, h)]
 region_points = [(0, 0), (w, 0), (w, h), (0, h)]  # Define the region
 classes_to_count = [0]  # person and car classes for count
@@ -43,6 +43,8 @@ counter = solutions.ObjectCounter(
     classes_names=model.names,
     draw_tracks=False,
     line_thickness=3,
+    view_in_counts=False,
+    view_out_counts=False,
 )
 
 

@@ -1,24 +1,29 @@
-from pathlib import Path
 import cv2
 import numpy as np
 from ultralytics import YOLO
+from pathlib import Path
+import argparse
+import os
 
-"""
-This script demonstrates how to perform object segmentation and classification on a video using YOLOv8.
-The script loads a video file, segments objects in each frame, and classifies the segmented objects.
-The segmentation model is used to detect objects, while the classification model is used to classify the detected objects.
-The script saves the segmented objects as images in a folder.
-"""
+# Argument parser
+parser = argparse.ArgumentParser(description="Object Segmentation and Classification using YOLOv8")
+parser.add_argument('--model_path', type=str, required=True, help='Path to the YOLOv8 model')
+parser.add_argument('--video_path', type=str, required=True, help='Path to the input video file')
+parser.add_argument('--output_dir', type=str, required=True, help='Directory to save the output images')
+args = parser.parse_args()
 
-## INIT VIDEO CAPTURE
-cap = cv2.VideoCapture("Testing_1.MOV")
+# INIT VIDEO CAPTURE
+cap = cv2.VideoCapture(args.video_path)
 assert cap.isOpened(), "Error reading video file"
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 
-## INIT PARAMETERS
+# INIT PARAMETERS
 BLP_ID = 0
 FRAME_ID = 0
-model = YOLO('best.pt')
+model = YOLO(args.model_path)
+
+# Ensure output directory exists
+os.makedirs(args.output_dir, exist_ok=True)
 
 while cap.isOpened():
     success, im0 = cap.read()
@@ -33,7 +38,7 @@ while cap.isOpened():
         img_name = Path(r.path).stem
 
         # iterate each object contour 
-        for ci,c in enumerate(r):
+        for ci, c in enumerate(r):
             try:
                 label = c.names[c.boxes.cls.tolist().pop()]
 
@@ -49,7 +54,7 @@ while cap.isOpened():
                 # Detection crop (from either OPT1 or OPT2)
                 x1, y1, x2, y2 = c.boxes.xyxy.cpu().numpy().squeeze().astype(np.int32)
                 iso_crop = isolated[y1:y2, x1:x2]
-                cv2.imwrite(f"saved2/BLP{BLP_ID}_frame{FRAME_ID}.png", iso_crop)
+                cv2.imwrite(os.path.join(args.output_dir, f"BLP{BLP_ID}_frame{FRAME_ID}.png"), iso_crop)
                 BLP_ID += 1
             except Exception:
                 pass

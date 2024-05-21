@@ -2,14 +2,19 @@ import cv2
 from ultralytics import YOLO
 import numpy as np
 from matplotlib import pyplot as plt
-from pathlib import Path
+import argparse
+
+# Argument parser
+parser = argparse.ArgumentParser(description="Bell Pepper Pose Estimation using YOLOv8")
+parser.add_argument('--model_path', type=str, required=True, help='Path to the YOLOv8 segmentation model')
+parser.add_argument('--image_path', type=str, required=True, help='Path to the input image')
+args = parser.parse_args()
 
 # Load the YOLOv8 segmentation model
-model = YOLO('SegBest.pt')
+model = YOLO(args.model_path)
 
 # Load the image
-image_path = 'TestImages/3D_BLP_006.jpg'
-image = cv2.imread(image_path)
+image = cv2.imread(args.image_path)
 
 # Run YOLOv8 inference on the image
 results = model(image, imgsz=320, iou=0.2, conf=0.20)
@@ -49,7 +54,7 @@ for r in results:
 
             # Draw the ellipse on the original image
             image_with_ellipse = image.copy()
-            cv2.ellipse(image_with_ellipse, ellipse, (0, 255, 0), 2)
+            cv2.ellipse(image_with_ellipse, ellipse, (0, 255, 0), 4)
 
             # Calculate the minimum enclosing rotated rectangle (bounding box)
             rotated_rect = cv2.minAreaRect(contour)
@@ -57,11 +62,11 @@ for r in results:
             box_points = np.intp(box_points)
 
             # Draw the bounding box on the original image
-            cv2.drawContours(image_with_ellipse, [box_points], 0, (0, 0, 255), 2)
+            cv2.drawContours(image_with_ellipse, [box_points], 0, (0, 0, 255), 4)
 
             # Draw an arrow pointing to the peduncle of the bell pepper
             peduncle_point = (int(ellipse[0][0]), int(ellipse[0][1] - ellipse[1][1] / 2))
-            cv2.arrowedLine(image_with_ellipse, peduncle_point, (peduncle_point[0], peduncle_point[1] - 50), (255, 0, 0), 2, tipLength=0.3)
+            cv2.arrowedLine(image_with_ellipse, peduncle_point, (peduncle_point[0], peduncle_point[1] - 100), (255, 0, 0), 10, tipLength=0.3)
 
             # Extract pose information
             center = rotated_rect[0]

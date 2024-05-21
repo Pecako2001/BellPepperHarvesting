@@ -1,13 +1,21 @@
 import cv2
 from ultralytics import YOLO
 from ultralytics.utils.plotting import Annotator, colors
+import argparse
 
-model = YOLO("yolov8n-seg.pt")  # segmentation model
+# Argument parser
+parser = argparse.ArgumentParser(description="Bell Pepper Detection using YOLOv8")
+parser.add_argument('--model_path', type=str, required=True, help='Path to the YOLOv8 segmentation model')
+parser.add_argument('--video_path', type=str, required=True, help='Path to the input video file')
+parser.add_argument('--output_path', type=str, required=True, help='Path to save the output video file')
+args = parser.parse_args()
+
+model = YOLO(args.model_path)
 names = model.model.names
-cap = cv2.VideoCapture("path/to/video/file.mp4")
+cap = cv2.VideoCapture(args.video_path)
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 
-out = cv2.VideoWriter("instance-segmentation.avi", cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
+out = cv2.VideoWriter(args.output_path, cv2.VideoWriter_fourcc(*"MJPG"), fps, (w, h))
 
 while True:
     ret, im0 = cap.read()
@@ -22,7 +30,8 @@ while True:
         clss = results[0].boxes.cls.cpu().tolist()
         masks = results[0].masks.xy
         for mask, cls in zip(masks, clss):
-            annotator.seg_bbox(mask=mask, mask_color=colors(int(cls), True), det_label=names[int(cls)])
+            if mask.size > 0:  # Check if mask is not empty
+                annotator.seg_bbox(mask=mask, mask_color=colors(int(cls), True), det_label=names[int(cls)])
 
     out.write(im0)
     cv2.imshow("instance-segmentation", im0)
