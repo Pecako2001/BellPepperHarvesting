@@ -6,3 +6,8 @@ For the detections of the systems there have been tested several models to look 
 | YOLOV8-seg  | 63.0%         | 51.5%    |  -    |
 | YOLOV9-seg  | 54.1%         | 53.7%    |  -    |
 | GELAN-seg   | 71.6%         | 53.2%    |  -    |
+
+example script :
+```sh
+python yolov8_segmentation_video.py --input input_video.mp4 --output output_video.mp4 --model yolov8-seg.pt
+```

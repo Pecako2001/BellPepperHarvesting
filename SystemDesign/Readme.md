@@ -73,27 +73,14 @@ python video_segmentation_all_classes.py --video input_video.mp4 --ClassifyModel
 - `--output`: Path to save the output video file.
 - `--show`: Flag to display the video frames in real-time.
 
-## Requirements
-
-- Python 3.x
-- OpenCV
-- Matplotlib
-- NumPy
-- YOLOv8
-
-## Installation
-
-1. Clone this repository.
-2. Install the required dependencies:
-
+### Concept for system with counter 
+This will create a video from a counter object, it will determine all of the ripe and unripe bell peppers inside the video. In the top left corner it will create a menu with ripe and unripe.
 ```sh
-pip install -r requirements.txt
+python bell_pepper_count.py --input_video path/to/input/video.mov --output_video path/to/output/video.avi --seg_model path/to/SegBest.pt --cls_model path/to/ClassBest.pt
 ```
 
-## Contributing
+- `--input_video`: Path to the input video file.
+- `--cls_model`: Path to the classification model.
+- `--seg_model`: Path to the segmentation model.
+- `--output_video`: Path to save the output video file.
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes.
-
-## License
-
-This project is licensed under the MIT License.

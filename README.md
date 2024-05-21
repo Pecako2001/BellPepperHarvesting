@@ -93,6 +93,24 @@ Placeholder for 3D estimation details and images.
 
 ## Conclusion
 Summary of findings and potential impacts on automated bell pepper harvesting.
+
+## Installation
+
+1. Clone this repository.
+2. Install the required dependencies:
+
+```sh
+pip install -r requirements.txt
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License.
+
 # References
 - Agrist. (2024, March). Agrist. Retrieved from https://agrist.com/.
 - Armstrong, P. (2024, March). Bloom’s taxonomy. Retrieved from https://cft.vanderbilt.edu/guides-sub-pages/blooms-taxonomy/.
