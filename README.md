@@ -28,7 +28,7 @@ This research was conducted as part of the A-System minor at Fontys University o
 <div align="center">
 
 ## Connect with Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](www.linkedin.com/in/koen-van-wijlick-00b820204)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/koen-van-wijlick-00b820204)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black)](https://github.com/Pecako2001)
 [![Email](https://img.shields.io/badge/Email-Contact-red)](mailto:koenvanwijlick@gmail.com)
 
